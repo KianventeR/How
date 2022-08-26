@@ -96,7 +96,6 @@ public class QuestionSheet {
         Cell cellD = rowD.getCell(cellReferenceD.getCol()); 
         D = cellD.toString();
         urlD = getClass().getResource(D);
-        System.out.println(urlD);
         if(urlD == null) 
             hasLinkD = false;
         else {
@@ -108,36 +107,19 @@ public class QuestionSheet {
         Row rowAns = sheet.getRow(cellReferenceAns.getRow());
         Cell cellAns = rowAns.getCell(cellReferenceAns.getCol());
         String cellAnsString = cellAns.toString();
-        System.out.println(cellAnsString);
         switch(cellAnsString) {
-            case "A":
-                System.out.println("test");
-                How2Prog.sheet.answerInt = 0;
-                break;
-            case "B":
-                System.out.println("test");
-                How2Prog.sheet.answerInt = 1;
-                break;
-            case "C":
-                System.out.println("test");
-                How2Prog.sheet.answerInt = 2;
-                break;
-            case "D":
-                System.out.println("test");
-                How2Prog.sheet.answerInt = 3;
-                break;
+            case "A": How2Prog.sheet.answerInt = 0; break;
+            case "B": How2Prog.sheet.answerInt = 1; break;
+            case "C": How2Prog.sheet.answerInt = 2; break;
+            case "D": How2Prog.sheet.answerInt = 3; break;
         }
-
-        System.out.println(How2Prog.sheet.answerInt);
         answerIntFinal = choicesNum.indexOf(How2Prog.sheet.answerInt);
-        System.out.println(answerIntFinal);
 
         CellReference cellReferenceLink = new CellReference("K" + generated.get(Scores.questionsNum).toString()); 
         Row rowLink = sheet.getRow(cellReferenceLink.getRow());
         Cell cellLink = rowLink.getCell(cellReferenceLink.getCol());
         link = String.valueOf(cellLink);
         urlLink = getClass().getResource(link);
-        System.out.println(link +" and "+urlLink);
         if(urlLink == null | link == "") 
             hasLink = false;
         else
