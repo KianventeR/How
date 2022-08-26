@@ -1,3 +1,9 @@
+// Works similar to MusicPlayer.java.
+// This class plays the sound effect of clicking buttions.
+// Buttons vary by their respective results (e.g. wrong answer sfx, or locked button sfx when no snippets
+// present in the question code).
+// This differs to MusicPlayer by not looping the sound, only plays sound once.
+
 import java.io.IOException;
 
 import javax.sound.sampled.AudioInputStream;

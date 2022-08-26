@@ -1,3 +1,6 @@
+// The GUI for the Difficulty section of the game.
+// Has buttons that set the difficulty of the game and return to menu.
+
 import javax.swing.*;
 
 public class Difficulty extends JFrame {

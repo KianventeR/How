@@ -1,3 +1,8 @@
+// Displays Code Snippet that shows the question's code snippet when clicking
+// its respective button (to the right of the question).
+
+// Works only if there is a Code Snippet on the question, else plays an error sound.
+
 public class CodeSnippetLink extends javax.swing.JFrame {
     public CodeSnippetLink() {
         initComponents();

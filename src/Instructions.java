@@ -1,3 +1,6 @@
+// This class contains the GUI of the Instructions section.
+// It is simply an image displayed, but added a return button to go back to menu.
+
 import javax.swing.*;
 
 public class Instructions extends JFrame {

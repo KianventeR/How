@@ -1,5 +1,11 @@
-import java.net.URL;
+// The GUI of the Gameplay section.
+// This contains the the questions, code snippets (if any), and choices displayed.
+// There is also a music toggle and return to menu button.
 
+// When Return to menu button is clicked, user is first prompted to the Results section
+// to show this partial score without finishing the game.
+
+import java.net.URL;
 import javax.swing.*;
 
 public class Gameplay extends JFrame {
@@ -365,7 +371,6 @@ public class Gameplay extends JFrame {
         catch (Exception e) { e.printStackTrace(); } 
         try { Music.resultsMusic(); }
         catch (Exception e) { e.printStackTrace(); } 
-        code.dispose();
         this.setVisible(false);
         How2Prog.results = new Results();
         How2Prog.results.setVisible(true);
@@ -383,27 +388,45 @@ public class Gameplay extends JFrame {
             new java.util.Timer().schedule(new java.util.TimerTask() {
                 @Override
                 public void run() {
-                    code.dispose();
-                } }, 10*1000);
+                    if(!code.isVisible())
+                        code.dispose();
+                    new java.util.Timer().schedule(new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            code.dispose();
+                        } }, 3*1000);
+                } }, 3*1000);
         }else {
-            try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+            try { SFX sfx = new SFX("/audio/locked button.wav"); sfx.play(); }
             catch (Exception e) { e.printStackTrace(); }
         }
     }
     
-    private void GAME_AMouseClicked(java.awt.event.MouseEvent evt) {  
-        try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
-        catch (Exception e) { e.printStackTrace(); }
-
+    private void GAME_AMouseClicked(java.awt.event.MouseEvent evt) { 
         if(How2Prog.sheet.hasLinkA) {
+            try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             QuestionSheet.gameplay.setStoredIcon(How2Prog.sheet.urlA); 
             if(How2Prog.sheet.answerIntFinal == 0)
                 answer = true;
             code = new CodeSnippet();
             code.setVisible(true);
             code.setLocationRelativeTo(null);
+            new java.util.Timer().schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    if(!code.isVisible())
+                        code.dispose();
+                    new java.util.Timer().schedule(new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            code.dispose();
+                        } }, 3*1000);
+                } }, 3*1000);
         } else {
             if(How2Prog.sheet.answerIntFinal == 0) {
+                try { SFX sfx = new SFX("/audio/y button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.correct++;
                 QuestionSheet.gameplay.dispose();  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -418,6 +441,8 @@ public class Gameplay extends JFrame {
                     How2Prog.results.setLocationRelativeTo(null);
                 }
             }else {
+                try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.wrong++;
                 QuestionSheet.gameplay.dispose();  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -436,18 +461,30 @@ public class Gameplay extends JFrame {
     }                                   
 
     private void GAME_BMouseClicked(java.awt.event.MouseEvent evt) { 
-        try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
-        catch (Exception e) { e.printStackTrace(); }
-
         if(How2Prog.sheet.hasLinkB) {
+            try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             QuestionSheet.gameplay.setStoredIcon(How2Prog.sheet.urlB); 
             if(How2Prog.sheet.answerIntFinal == 1)
                 answer = true;
             code = new CodeSnippet();
             code.setVisible(true);
             code.setLocationRelativeTo(null);
+            new java.util.Timer().schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    if(!code.isVisible())
+                        code.dispose();
+                    new java.util.Timer().schedule(new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            code.dispose();
+                        } }, 3*1000);
+                } }, 3*1000);
         }else {
             if(How2Prog.sheet.answerIntFinal == 1) {
+                try { SFX sfx = new SFX("/audio/y button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.correct++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -462,6 +499,8 @@ public class Gameplay extends JFrame {
                     How2Prog.results.setLocationRelativeTo(null);
                 }
             }else {
+                try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.wrong++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -480,10 +519,9 @@ public class Gameplay extends JFrame {
     }                                   
 
     private void GAME_CMouseClicked(java.awt.event.MouseEvent evt) { 
-        try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
-        catch (Exception e) { e.printStackTrace(); }
-
         if(How2Prog.sheet.hasLinkC) {
+            try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             QuestionSheet.gameplay.setStoredIcon(How2Prog.sheet.urlC); 
             if(How2Prog.sheet.answerIntFinal == 2)
                 answer = true;
@@ -491,12 +529,20 @@ public class Gameplay extends JFrame {
             code.setVisible(true);
             code.setLocationRelativeTo(null);
             new java.util.Timer().schedule(new java.util.TimerTask() {
-            @Override
-            public void run() {
-                code.dispose();
-            } }, 10*1000);
+                @Override
+                public void run() {
+                    if(!code.isVisible())
+                        code.dispose();
+                    new java.util.Timer().schedule(new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            code.dispose();
+                        } }, 3*1000);
+                } }, 3*1000);
         }else {
             if(How2Prog.sheet.answerIntFinal == 2) {
+                try { SFX sfx = new SFX("/audio/y button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.correct++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -511,6 +557,8 @@ public class Gameplay extends JFrame {
                     How2Prog.results.setLocationRelativeTo(null);
                 }
             }else {
+                try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.wrong++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -529,18 +577,30 @@ public class Gameplay extends JFrame {
     }                                   
 
     private void GAME_DMouseClicked(java.awt.event.MouseEvent evt) { 
-        try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
-        catch (Exception e) { e.printStackTrace(); }
-                                           
         if(How2Prog.sheet.hasLinkD) {
+            try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             QuestionSheet.gameplay.setStoredIcon(How2Prog.sheet.urlD); 
             if(How2Prog.sheet.answerIntFinal == 3)
                 answer = true;  
             code = new CodeSnippet();
             code.setVisible(true);
             code.setLocationRelativeTo(null);
+            new java.util.Timer().schedule(new java.util.TimerTask() {
+                @Override
+                public void run() {
+                    if(!code.isVisible())
+                        code.dispose();
+                    new java.util.Timer().schedule(new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            code.dispose();
+                        } }, 3*1000);
+                } }, 3*1000);
         }else {
             if(How2Prog.sheet.answerIntFinal == 3) {
+                try { SFX sfx = new SFX("/audio/y button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.correct++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
@@ -555,6 +615,8 @@ public class Gameplay extends JFrame {
                     How2Prog.results.setLocationRelativeTo(null);
                 }  
             }else {
+                try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+                catch (Exception e) { e.printStackTrace(); }
                 Scores.wrong++;
                 QuestionSheet.gameplay.setVisible(false);  
                 if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)

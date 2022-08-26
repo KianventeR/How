@@ -1,3 +1,6 @@
+// Contains file paths of the game musics and is played using MusicPlay.java
+// Varies depending on which GUI is present.
+
 public class Music {
     static MusicPlayer splashMusic;
     static MusicPlayer menuMusic;

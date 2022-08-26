@@ -1,3 +1,7 @@
+// This class contains the GUI of the Splash Screen of the game.
+// This class simply displays the splash screen, nothing more.
+// The splash screen runs for 3 seconds (specified in the Gameplay class).
+
 import javax.swing.*;
 
 public class SplashScreen extends JFrame {

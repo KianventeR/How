@@ -1,3 +1,6 @@
+// This is a class that contains functions for initializing, playing, pausing, resuming,
+// stopping, and reseting the music of the game.
+
 import java.io.IOException;
 import java.net.URL;
 

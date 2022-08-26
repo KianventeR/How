@@ -1,3 +1,7 @@
+// Displays Code Snippets that show when a choice containing snippets is clicked.
+
+// Works only if the choices contains snippets, else clicking only enters answer.
+
 public class CodeSnippet extends javax.swing.JFrame {
     public CodeSnippet() {
         initComponents();
@@ -42,11 +46,10 @@ public class CodeSnippet extends javax.swing.JFrame {
     }  
     
     private void codeSnippetMouseClicked(java.awt.event.MouseEvent evt) {  
-        try { SFX sfx = new SFX("/audio/button.wav"); sfx.play(); }
-        catch (Exception e) { e.printStackTrace(); }    
-
         QuestionSheet.gameplay.setVisible(false);                             
         if(QuestionSheet.gameplay.answer == true) {
+            try { SFX sfx = new SFX("/audio/y button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             QuestionSheet.gameplay.answer = false;
             if(How2Prog.sheet.answerIntFinal == choice) {
                 choice = 4;
@@ -65,6 +68,8 @@ public class CodeSnippet extends javax.swing.JFrame {
             }
             this.dispose();
         }else {
+            try { SFX sfx = new SFX("/audio/x button.wav"); sfx.play(); }
+            catch (Exception e) { e.printStackTrace(); }
             Scores.wrong++;
             if(Scores.questionsNum < How2Prog.sheet.questionsMaxNum)
                 How2Prog.sheet.displayQuestion();

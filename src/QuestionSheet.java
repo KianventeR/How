@@ -1,3 +1,7 @@
+// Reads the .xlsx file that stores the questions.
+// Sets difficulty and gets a collection of questions, code snippets (if any), and its answers.
+// This also deploys the game mechanics of if there are code snippets or none.
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;

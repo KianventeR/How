@@ -1,3 +1,7 @@
+// This class contains the GUI of the Main Menu of the game.
+// Buttons include closing game, toggling music, and navigation of the game.
+// You can go to the Instructions and Difficulty sections here.
+
 import javax.swing.*;
 
 public class MainMenu extends JFrame {    

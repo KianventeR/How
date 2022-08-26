@@ -1,3 +1,6 @@
+// The main class of the program.
+// Contains initialization of most classes and runs the initial part of the game.
+
 public class How2Prog {
     static int first = 0;
     

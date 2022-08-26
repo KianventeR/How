@@ -1,3 +1,10 @@
+// This class contains the GUI of the Results section.
+// The Results, by its name, displays the final score of the play after playing
+// the game.
+
+// What is displayed varies by the score of the player, if the player scores high
+// or low.
+
 import javax.swing.*;
 
 public class Results extends javax.swing.JFrame {
