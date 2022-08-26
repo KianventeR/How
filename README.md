@@ -17,15 +17,10 @@ The files can be accessed in the [Google Drive](https://drive.google.com/drive/f
 Simply opening the `How2Prog.exe` file starts the game.
 
 ###
-Opening the game using the `How2Prog.jar` file is only possible through the console/terminal.
-
-Enter the following:
-```bash
-  java --enable-preview -jar How2Prog.jar
-```
+Another alternative way to start the program is by opening the `How2Prog.jar`. It works similar to `How2Prog.exe`.
 
 ###
-For running the raw java files, the main class of the program is `How2Prog.java`.
+For running the raw java files, the main class of the program is `How2Prog.java` as reference.
 
 
 ## Authors
