@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\ASUS\Documents\Academics\Coding\IntelliJ\How2Prog\out\artifacts\How2Prog_jar\How2Prog.jar</jar>
+  <outfile>C:\Users\ASUS\Documents\Academics\Coding\VSCode\How2Prog\How2Prog.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\ASUS\Documents\Academics\Coding\VSCode\icons8-pixels-60.ico</icon>
+  <singleInstance>
+    <mutexName>How2Prog</mutexName>
+    <windowTitle>How To: Programming</windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>16.0.1</minVersion>
+    <maxVersion>18.0.2</maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+</launch4jConfig>
