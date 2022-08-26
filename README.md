@@ -38,5 +38,5 @@ For running the raw java files, the main class of the program is `How2Prog.java`
 
 The program requires:
 
-- [JDK 18.0.2](https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html)
+- Atleast [JDK 16.0.1](https://www.oracle.com/java/technologies/javase/jdk18-archive-downloads.html)
 - [Apache POI 5.2.2](https://poi.apache.org/download.html)
