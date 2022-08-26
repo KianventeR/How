@@ -8,10 +8,6 @@ This is a quiz game program built with Java by Two 2nd-Year Computer Science stu
  - Game concept from Are You Smarter Than A 5th Grader?
 
 
-## Installation
-
-The `.jar` and `.exe` files are too large to be uploaded to Github.
-The files can be accessed in the [Google Drive](https://drive.google.com/drive/folders/1IXfk2Qg4Vm9qNClR1s0epMEj3EMkLxuk?usp=sharing).
 ## Deployment
 
 Simply opening the `How2Prog.exe` file starts the game.
