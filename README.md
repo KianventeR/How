@@ -1,7 +1,7 @@
 
 # How To: Programming (Game)
 
-This is a quiz game program built with Java by Two 2nd Year college students.
+This is a quiz game program built with Java by Two 2nd-Year college students.
 ## Acknowledgements
 
  - [Soundtrack](https://www.youtube.com/c/Pixverses) by Pix
