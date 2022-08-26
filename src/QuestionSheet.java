@@ -33,99 +33,121 @@ public class QuestionSheet {
                 generated.add(random);
         }
     }
-
-    public void displayQuestion() {
+    public void initiateWB() {
         try {
-            XSSFWorkbook wb = new XSSFWorkbook(getClass().getClassLoader().getResourceAsStream("questions.xlsx"));
-            XSSFSheet sheet = wb.getSheetAt(0);
-            
-                CellReference cellReferenceQues = new CellReference("E" + generated.get(Scores.questionsNum).toString()); 
-                Row rowQues = sheet.getRow(cellReferenceQues.getRow());
-                Cell cellQues = rowQues.getCell(cellReferenceQues.getCol());
-                Ques = cellQues.toString(); 
-
-                String choices = "FGHI";
-                List<Integer> choicesNum = new LinkedList<>();
-                while (choicesNum.size() < choices.length()) {
-                    int random = getRandom(0, 4);
-                    if(!choicesNum.contains(random))
-                        choicesNum.add(random);
-                }
-                    
-                CellReference cellReferenceA = new CellReference(choices.charAt(choicesNum.get(0)) + generated.get(Scores.questionsNum).toString()); 
-                Row rowA = sheet.getRow(cellReferenceA.getRow());
-                Cell cellA = rowA.getCell(cellReferenceA.getCol()); 
-                A = String.valueOf(cellA);
-                urlA = getClass().getResource(A);
-                if(urlA == null) 
-                    hasLinkA = false;
-                else {
-                    hasLinkA = true;
-                    A = "Click to open code.\nClick code to select answer.";
-                }
-
-                CellReference cellReferenceB = new CellReference(choices.charAt(choicesNum.get(1)) + generated.get(Scores.questionsNum).toString()); 
-                Row rowB = sheet.getRow(cellReferenceB.getRow());
-                Cell cellB = rowB.getCell(cellReferenceB.getCol()); 
-                B = String.valueOf(cellB);
-                urlB = getClass().getResource(B);
-                if(urlB == null) 
-                    hasLinkB = false;
-                else {
-                    hasLinkB = true;
-                    B = "Click to open code.\nClick code to select answer.";
-                }
-
-                CellReference cellReferenceC = new CellReference(choices.charAt(choicesNum.get(2)) + generated.get(Scores.questionsNum).toString()); 
-                Row rowC = sheet.getRow(cellReferenceC.getRow());
-                Cell cellC = rowC.getCell(cellReferenceC.getCol()); 
-                C = String.valueOf(cellC);
-                urlC = getClass().getResource(C);
-                if(urlC == null) 
-                    hasLinkC = false;
-                else {
-                    hasLinkC = true;
-                    C = "Click to open code.\nClick code to select answer.";
-                }
-
-                CellReference cellReferenceD = new CellReference(choices.charAt(choicesNum.get(3)) + generated.get(Scores.questionsNum).toString()); 
-                Row rowD = sheet.getRow(cellReferenceD.getRow());
-                Cell cellD = rowD.getCell(cellReferenceD.getCol()); 
-                D = String.valueOf(cellD);
-                urlD = getClass().getResource(D);
-                if(urlD == null) 
-                    hasLinkD = false;
-                else {
-                    hasLinkD = true;
-                    D = "Click to open code.\nClick code to select answer.";
-                }
-
-                CellReference cellReferenceAns = new CellReference("J" + generated.get(Scores.questionsNum).toString()); 
-                Row rowAns = sheet.getRow(cellReferenceAns.getRow());
-                Cell cellAns = rowAns.getCell(cellReferenceAns.getCol());
-                if(cellAns.toString() == "A") answerInt = 0;
-                if(cellAns.toString() == "B") answerInt = 1;
-                if(cellAns.toString() == "C") answerInt = 2;
-                if(cellAns.toString() == "D") answerInt = 3;
-                answerIntFinal = choicesNum.indexOf(answerInt);
-
-                CellReference cellReferenceLink = new CellReference("K" + generated.get(Scores.questionsNum).toString()); 
-                Row rowLink = sheet.getRow(cellReferenceLink.getRow());
-                Cell cellLink = rowLink.getCell(cellReferenceLink.getCol());
-                link = String.valueOf(cellLink);
-                urlLink = getClass().getResource(link);
-                if(cellLink== null) 
-                    hasLink = false;
-                else
-                    hasLink = true;
-                
-                Scores.questionsNum++;
-
-                gameplay = new Gameplay();
-                gameplay.setVisible(true);
-                gameplay.setLocationRelativeTo(null);
+            wb = new XSSFWorkbook(getClass().getClassLoader().getResourceAsStream("questions.xlsx"));
+            sheet = wb.getSheetAt(0);
         } catch (IOException e) {
         }
+    }
+
+    public void displayQuestion() {
+        CellReference cellReferenceQues = new CellReference("E" + generated.get(Scores.questionsNum).toString()); 
+        Row rowQues = sheet.getRow(cellReferenceQues.getRow());
+        Cell cellQues = rowQues.getCell(cellReferenceQues.getCol());
+        Ques = cellQues.toString(); 
+
+        String choices = "FGHI";
+        List<Integer> choicesNum = new LinkedList<>();
+        while (choicesNum.size() < choices.length()) {
+            int random = getRandom(0, 4);
+            if(!choicesNum.contains(random))
+                choicesNum.add(random);
+        }
+            
+        CellReference cellReferenceA = new CellReference(choices.charAt(choicesNum.get(0)) + generated.get(Scores.questionsNum).toString()); 
+        Row rowA = sheet.getRow(cellReferenceA.getRow());
+        Cell cellA = rowA.getCell(cellReferenceA.getCol()); 
+        A = cellA.toString();
+        urlA = getClass().getResource(A);
+        if(urlA == null) 
+            hasLinkA = false;
+        else {
+            hasLinkA = true;
+            A = "Click to open code.\nClick code to select answer.";
+        }
+
+        CellReference cellReferenceB = new CellReference(choices.charAt(choicesNum.get(1)) + generated.get(Scores.questionsNum).toString()); 
+        Row rowB = sheet.getRow(cellReferenceB.getRow());
+        Cell cellB = rowB.getCell(cellReferenceB.getCol()); 
+        B = cellB.toString();
+        urlB = getClass().getResource(B);
+        if(urlB == null) 
+            hasLinkB = false;
+        else {
+            hasLinkB = true;
+            B = "Click to open code.\nClick code to select answer.";
+        }
+
+        CellReference cellReferenceC = new CellReference(choices.charAt(choicesNum.get(2)) + generated.get(Scores.questionsNum).toString()); 
+        Row rowC = sheet.getRow(cellReferenceC.getRow());
+        Cell cellC = rowC.getCell(cellReferenceC.getCol()); 
+        C = cellC.toString();
+        urlC = getClass().getResource(C);
+        if(urlC == null) 
+            hasLinkC = false;
+        else {
+            hasLinkC = true;
+            C = "Click to open code.\nClick code to select answer.";
+        }
+
+        CellReference cellReferenceD = new CellReference(choices.charAt(choicesNum.get(3)) + generated.get(Scores.questionsNum).toString()); 
+        Row rowD = sheet.getRow(cellReferenceD.getRow());
+        Cell cellD = rowD.getCell(cellReferenceD.getCol()); 
+        D = cellD.toString();
+        urlD = getClass().getResource(D);
+        System.out.println(urlD);
+        if(urlD == null) 
+            hasLinkD = false;
+        else {
+            hasLinkD = true;
+            D = "Click to open code.\nClick code to select answer.";
+        }
+
+        CellReference cellReferenceAns = new CellReference("J" + generated.get(Scores.questionsNum).toString()); 
+        Row rowAns = sheet.getRow(cellReferenceAns.getRow());
+        Cell cellAns = rowAns.getCell(cellReferenceAns.getCol());
+        String cellAnsString = cellAns.toString();
+        System.out.println(cellAnsString);
+        switch(cellAnsString) {
+            case "A":
+                System.out.println("test");
+                How2Prog.sheet.answerInt = 0;
+                break;
+            case "B":
+                System.out.println("test");
+                How2Prog.sheet.answerInt = 1;
+                break;
+            case "C":
+                System.out.println("test");
+                How2Prog.sheet.answerInt = 2;
+                break;
+            case "D":
+                System.out.println("test");
+                How2Prog.sheet.answerInt = 3;
+                break;
+        }
+
+        System.out.println(How2Prog.sheet.answerInt);
+        answerIntFinal = choicesNum.indexOf(How2Prog.sheet.answerInt);
+        System.out.println(answerIntFinal);
+
+        CellReference cellReferenceLink = new CellReference("K" + generated.get(Scores.questionsNum).toString()); 
+        Row rowLink = sheet.getRow(cellReferenceLink.getRow());
+        Cell cellLink = rowLink.getCell(cellReferenceLink.getCol());
+        link = String.valueOf(cellLink);
+        urlLink = getClass().getResource(link);
+        System.out.println(link +" and "+urlLink);
+        if(urlLink == null | link == "") 
+            hasLink = false;
+        else
+            hasLink = true;
+        
+        Scores.questionsNum++;
+
+        gameplay = new Gameplay();
+        gameplay.setVisible(true);
+        gameplay.setLocationRelativeTo(null);
     }
 
     public static int getRandom(int from, int to) {
@@ -141,4 +163,7 @@ public class QuestionSheet {
     public boolean hasLink, hasLinkA, hasLinkB, hasLinkC, hasLinkD; 
     public URL urlLink, urlA, urlB, urlC, urlD;
     List<Integer> generated;
+
+    XSSFWorkbook wb;
+    XSSFSheet sheet;
 }   

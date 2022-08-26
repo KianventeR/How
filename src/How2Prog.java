@@ -15,6 +15,7 @@ public class How2Prog {
     public static int first() { return first; }
     
     public static void main(String[] args) {
+        sheet.initiateWB();
         Music.splashMusic();
         splashScreen.setVisible(true);
         splashScreen.setLocationRelativeTo(null);
